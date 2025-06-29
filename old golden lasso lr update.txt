@@ -1,0 +1,3 @@
+old golden lasso lr update
+
+    #l&r bounds:    #d/dbj∑rij^2 +λ|bj|= 0    #d/dbj∑(yi-∑xikbk)^2+λ|bj| = 0    #-2∑xij(yi-∑xikbk)+λ*sign(bj)=0    #∑xijyi=∑xij∑xikbk+λ/2*sign(bj)=0    #all bk fixed not bj    #rij = yi-∑(k≠j)xikbk    #∑xijrij+∑xij^2bj+λ/2*sign(bj)=0    #bj=∑xijrij/∑xij^2-λ/2xj2sign(bj)    #sign term removed b/c uncomputed & to max width on small scale    #/2xj2 --> /2xj2+eps to stop div by ~0    l <- -abs(xjrj / xj2) - lambda / (2*xj2+1e-8)    r <- abs(xjrj / xj2) + lambda / (2*xj2+1e-8)
